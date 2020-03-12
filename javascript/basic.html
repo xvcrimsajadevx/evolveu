@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script type="text/javascript" src="basic.js"></script>
+    <title>Comp 100</title>
+  </head>
+  <body>
+    <h1>Hello World from HTML</h1>
+    <input id='myField' type='text' />
+    <br>
+    <button id='myButton' type='button'>Push Me</button>
+    <br>
+    <h2 id="myResults"></h2>
+
+    <script type="text/javascript">
+      console.log("Hello World from inline Javascript");
+
+      document.getElementById("myButton").addEventListener("click", onButtonClicked);
+
+
+      function onButtonClicked() {
+        var myInput = parseInt(document.getElementById("myField").value);
+
+        console.log("I'm in the button click!");
+        console.log("Add 1: ", myInput + 1);
+        size();
+      };
+
+      function size() {
+        var myNumber = parseInt(document.getElementById("myField").value)
+
+        if (myNumber < 10) {
+          document.getElementById("myResults").innerHTML = "Small";
+        } else if (myNumber >= 10 && myNumber <= 19) {
+          document.getElementById("myResults").innerHTML = "Medium";
+        } else if (myNumber >= 20) {
+          document.getElementById("myResults").innerHTML = "Large";
+        } else {
+          document.getElementById("myResults").innerHTML = "This is not a number";
+        }
+      };
+    </script>
+  </body>
+</html>
